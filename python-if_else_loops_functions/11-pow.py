@@ -8,5 +8,6 @@ def pow(a, b):
         result
     else:
         for i in range(-b):
-            result = result * (1/a)
+            result = result * a
+        result = 1 / result
     return result
