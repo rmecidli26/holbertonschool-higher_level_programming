@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    if len(matrix) == 1 and len(matrix[0]) == 0:
+    for row in matrix:
+    if not row:  # Bu, 'if len(row) == 0:' deməkdir
         print()
         break
     for i in range(0, len(matrix)):
