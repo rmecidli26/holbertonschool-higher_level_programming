@@ -9,3 +9,4 @@ def simple_delete(a_dictionary, key=""):
     for i in range(0, a_dictionary.keys()):
         if key in a_dictionary.keys():
             del a_dictionary[key]
+    return a_dictionary
