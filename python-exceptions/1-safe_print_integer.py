@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
     try:
-        if(int(value) == True):
+        if(int(value)):
             print(value)
-        return True
+        else:
+            return True
     except:
         return False
