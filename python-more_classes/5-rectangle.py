@@ -1,27 +1,26 @@
 #!/usr/bin/python3
 """
-Bu modul Rectangle sinfini təyin edir.
-Obyekt silindikdə mesaj çap edən __del__ metodu daxildir.
+This module defines a Rectangle class.
+Includes area, perimeter, __str__, __repr__, and __del__.
 """
 
 
 class Rectangle:
-    """Düzbucaqlını təmsil edən sinif."""
+    """Class that defines a rectangle."""
 
     def __init__(self, width=0, height=0):
-        """Yeni bir Rectangle obyekti yaradır."""
+        """Initializes a new Rectangle instance."""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """width üçün getter metodu."""
+        """Retrieves the width."""
         return self.__width
 
-    @size.setter # Qeyd: 4-cü tapşırıqdakı setter məntiqi qorunur
     @width.setter
     def width(self, value):
-        """width üçün setter metodu."""
+        """Sets the width with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -30,12 +29,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """height üçün getter metodu."""
+        """Retrieves the height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """height üçün setter metodu."""
+        """Sets the height with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -43,17 +42,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Sahəni qaytarır."""
+        """Returns the rectangle area."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Perimetri qaytarır."""
+        """Returns the rectangle perimeter."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Düzbucaqlının '#' ilə vizual təsvirini qaytarır."""
+        """Returns a string representation of the rectangle with #."""
         if self.__width == 0 or self.__height == 0:
             return ""
 
@@ -65,9 +64,9 @@ class Rectangle:
         return rect_str
 
     def __repr__(self):
-        """Obyektin yenidən yaradılması üçün lazım olan sətri qaytarır."""
+        """Returns a string representation to recreate the instance."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Obyekt silindikdə mesaj çap edir."""
+        """Prints a message when the instance is deleted."""
         print("Bye rectangle...")
