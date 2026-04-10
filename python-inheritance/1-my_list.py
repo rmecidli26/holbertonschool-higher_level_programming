@@ -6,5 +6,8 @@ class MyList(list):
     """Siyahıdan miras alan sinif"""
 
     def print_sorted(self):
-        """Siyahını artan sıra ilə çap edir"""
+        """
+        Siyahını artan sıra ilə (mənfi ədədlər daxil) çap edir.
+        Orijinal siyahı dəyişmir.
+        """
         print(sorted(self))
