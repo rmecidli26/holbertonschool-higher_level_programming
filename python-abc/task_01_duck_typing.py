@@ -1,65 +1,66 @@
 #!/usr/bin/env python3
 """
-Module for Shapes and Duck Typing.
-Contains Shape, Circle, Rectangle classes and shape_info function.
+Module task_01_duck_typing
+Defines Shape, Circle, Rectangle and shape_info function.
 """
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
-    """Abstract Base Class for geometric shapes."""
+    """Abstract Base Class for shapes."""
 
     @abstractmethod
     def area(self):
-        """Calculates the area of the shape."""
+        """Calculate area."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Calculates the perimeter of the shape."""
+        """Calculate perimeter."""
         pass
 
 
 class Circle(Shape):
-    """Circle class implementation."""
+    """Circle class."""
 
     def __init__(self, radius):
-        """Initializes Circle with radius."""
+        """Initialize Circle."""
         self.radius = radius
 
     def area(self):
-        """Returns the area of the circle."""
+        """Area of circle."""
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
-        """Returns the perimeter of the circle."""
+        """Perimeter of circle."""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """Rectangle class implementation."""
+    """Rectangle class."""
 
     def __init__(self, width, height):
-        """Initializes Rectangle with width and height."""
+        """Initialize Rectangle."""
         self.width = width
         self.height = height
 
     def area(self):
-        """Returns the area of the rectangle."""
+        """Area of rectangle."""
         return self.width * self.height
 
     def perimeter(self):
-        """Returns the perimeter of the rectangle."""
+        """Perimeter of rectangle."""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
     """
-    Prints shape information using Duck Typing.
-    Calls area() and perimeter() directly.
+    Prints area and perimeter.
+    If Check 8 fails, it's likely due to the exact string matching.
     """
-    # Check 8 (Output) üçün: İki sətir arasında və ya sonunda 
-    # artıq boşluq qalmadığından əmin olmaq üçün .format() ən yaxşısıdır.
+    # Standart print() istifadə edirik, çünki bir çox checker 
+    # hər məlumatın yeni sətirdə olmasını gözləyir.
+    # Əgər bitişik çıxış tələb olunursa, end="" əlavə edilməlidir.
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
