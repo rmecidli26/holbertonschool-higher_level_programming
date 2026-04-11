@@ -1,42 +1,63 @@
+#!/usr/bin/env python3
+"""
+Shapes, Interfaces, and Duck Typing module.
+"""
 from abc import ABC, abstractmethod
 import math
 
+
 class Shape(ABC):
+    """Abstract class for geometric shapes."""
+
     @abstractmethod
     def area(self):
-        """Sahəni hesablayır"""
+        """Calculates the area of the shape."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Perimetri hesablayır"""
+        """Calculates the perimeter of the shape."""
         pass
 
+
 class Circle(Shape):
+    """Circle class inheriting from Shape."""
+
     def __init__(self, radius):
+        """Initializes Circle with a radius."""
         self.radius = radius
 
     def area(self):
+        """Returns the area of the circle."""
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
+        """Returns the perimeter of the circle."""
         return 2 * math.pi * self.radius
 
+
 class Rectangle(Shape):
+    """Rectangle class inheriting from Shape."""
+
     def __init__(self, width, height):
+        """Initializes Rectangle with width and height."""
         self.width = width
         self.height = height
 
     def area(self):
+        """Returns the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
+        """Returns the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
+
 
 def shape_info(shape):
     """
-    Duck Typing tətbiqi: Funksiya obyektin tipini yoxlamır,
-    sadəcə 'area' və 'perimeter' metodlarının olacağına inanır.
+    Prints the area and perimeter of a shape using duck typing.
+    Args:
+        shape: An object that should have area() and perimeter() methods.
     """
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
