@@ -55,12 +55,5 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    """
-    Prints area and perimeter.
-    If Check 8 fails, it's likely due to the exact string matching.
-    """
-    # Standart print() istifadə edirik, çünki bir çox checker 
-    # hər məlumatın yeni sətirdə olmasını gözləyir.
-    # Əgər bitişik çıxış tələb olunursa, end="" əlavə edilməlidir.
-    print("Area: {}".format(shape.area()))
+    print("Area: {}".format(shape.area()), end="")
     print("Perimeter: {}".format(shape.perimeter()))
