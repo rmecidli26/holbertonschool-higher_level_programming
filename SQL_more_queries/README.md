@@ -1,0 +1,1 @@
+SQL more exercises, their solving
